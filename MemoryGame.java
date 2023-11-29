@@ -12,6 +12,7 @@ public class MemoryGame extends JFrame{
     JButton reset = new JButton("Reset");
     JPanel buttonPanel = new JPanel();
     JLabel mainLabel = new JLabel("Welcome new player. Curent score: 0");
+    
     final int COLUMNS = 4;
     final int ROWS = 3;
     ArrayList<JButton> buttonList = new ArrayList<JButton>();
@@ -99,8 +100,11 @@ public class MemoryGame extends JFrame{
         for(int i = 0; i < 12; i++) {
             JButton button = buttonList.get(i);
             button.setEnabled(true);
-            button.setText("");
             button.setBackground(null);
+            score = 0;
+            matchCount = 0;
+            Collections.shuffle(colorList);
+            mainLabel.setText("Welcome new player. Curent score: 0"); 
         }
     }
 }
